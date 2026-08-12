@@ -1,0 +1,68 @@
+-- database: ./database.db
+SELECT * FROM model
+    JOIN manufacturer ON model.manufacturer_id
+    WHERE model.manufacturer_id= ?;
+SELECT model.model_id,manufacturer.name,model.name, model.image_url FROM model
+JOIN manufacturer 
+ON model.manufacturer_id=manufacturer.manufacturer_id;
+
+SELECT * FROM model
+    JOIN manufacturer ON manufacturer.manufacturer_id=model.manufacturer_id
+    WHERE model.model_id = 2;
+
+
+
+
+
+
+
+SELECT * FROM model
+ORDER BY name ASC;
+
+Insert into Cars(Model,Cost,Description) VALUES("MT-03",108,5300,"The MT-03 is a lightweight, agile street bike featuring a 321cc twin-cylinder engine. Its upright riding position and low seat height make it an ideal, stylish choice for urban commuting and new riders.");INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Yamaha YZF-R1",186,18399,"A flagship supersport bike featuring a 998cc crossplane engine and advanced electronics derived from MotoGP technology.");
+INSERT INTO Bikes(Model,Cost,Description) VALUES("Honda CBR500R",116,7299,"An approachable mid-sized sportbike with a 471cc parallel-twin engine, offering a perfect balance of performance and efficiency.");
+INSERT INTO Bikes(Model,manufacturer,Cost,Description) VALUES("Kawasaki Ninja 400",116,5299,"A compact sportbike known for its lightweight chassis and high-revving 399cc engine, ideal for both track days and daily riding.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Suzuki Hayabusa",186,19099,"The ultimate sportbike icon, powered by a 1340cc engine designed for massive torque and legendary top-end speed.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Ducati Panigale V4",190,24995,"An Italian masterpiece of engineering, featuring a Desmosedici Stradale V4 engine and cutting-edge aerodynamics.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("BMW S1000RR",188,18295,"A high-performance superbike with ShiftCam technology, offering incredible power delivery across the entire rev range.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("KTM 390 Duke",104,5899,"The 'Corner Rocket' is a lightweight naked bike with a punchy single-cylinder engine and aggressive streetfighter styling.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Triumph Street Triple 765",145,10195,"A precision-tuned naked bike featuring a signature three-cylinder engine and class-leading handling.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Harley-Davidson Iron 883",105,11249,"A stripped-down, blacked-out legend in the Sportster lineup, featuring the classic Evolution V-Twin engine.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Indian Scout Bobber",128,12249,"A low-slung cruiser with a powerful 1133cc liquid-cooled V-Twin and a raw, aggressive aesthetic.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Honda Rebel 500",95,6499,"A modern cruiser with a lean, 'bobber' silhouette and a user-friendly engine perfect for customization.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Kawasaki Z900",149,9699,"A powerhouse naked bike that balances raw Z-style design with a smooth 948cc four-cylinder engine.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("BMW R1250GS",124,17995,"The definitive adventure touring motorcycle, featuring a boxer engine and the ability to conquer both pavement and dirt.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Royal Enfield Himalayan",75,5449,"A simple, capable adventure bike designed for off-road durability and long-distance comfort in rugged terrain.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Yamaha Tenere 700",115,10799,"A rally-bred adventure bike featuring the reliable CP2 engine and a slim chassis for serious off-road capability.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Suzuki SV650",130,7399,"A perennial favorite naked bike known for its versatile V-twin engine and timeless trellis frame design.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Aprilia RS 660",143,11499,"A middleweight sportbike that blends racing performance with everyday comfort and a sophisticated electronics suite.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Honda Gold Wing",112,25600,"The pinnacle of motorcycle touring, offering a flat-six engine, luxurious seating, and advanced infotainment.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Kawasaki Vulcan S",110,7349,"A unique cruiser that allows for adjustable ergonomics to fit a wide variety of rider heights and styles.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("Triumph Bonneville T120",115,12895,"A modern classic icon that pairs timeless 1960s styling with a high-torque 1200cc engine.");
+INSERT INTO Bikes(Model,Topspeed,Cost,Description) VALUES("KTM 1290 Super Duke R",180,19599,"Nicknamed 'The Beast,' this hyper-naked bike offers incredible torque and a high power-to-weight ratio.");
+
+
+
+
+SELECT * FROM Bikes;
+
+SELECT Makers.Name,Bikes.Model,Bikes.IMAGE_URL FROM Bikes JOIN Makers ON Makers.MakerID=Bikes.MakerID;
+
+Select Bikes.Model FROM Bikes
+Join Makers ON Makers.MakerID=Bikes.MakerID
+WHERE Makers.Name="Yamaha";
+
+select Bikes.BikeID,Makers.Name,Bikes.Model,Bikes.IMAGE_URL
+FROM Bikes
+JOIN Makers ON Makers.MakerID=Bikes.MakerID;
+
+--just one bike based on id
+SELECT*FROM Bikes JOIN Makers on Makers.MakerID=Bike.MakerID
+WHERE Bikes.BikerID=2;
+
+
+SELECT Bikes.BikeID,Makers.Name,Bikes.Model, Bikes.IMAGE_URL FROM Bikes
+JOIN Makers ON Makers.MakerID=Bikes.MakerID;
+SELECT * FROM Bikes
+    JOIN Makers ON Makers.MakerID=Bikes.MakerID
+    WHERE Bikes.BikeID = 1;
