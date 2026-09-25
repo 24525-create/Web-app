@@ -26,42 +26,6 @@ def query_db(query, args=(), one=False):
     cur.close()
     return (rv[0] if rv else None) if one else rv
 
-# #Initialize the database and sample data
-# def init_db():
-#     conn = get_db_connection()
-#     conn.execute(''' CREATE TABLE IF NOT EXISTS cars(
-#                  id INTEGER PRIMARY KEY,
-#                  maker TEXT,
-#                  model TEXT'
-#                  YEAR INTEGER,
-#                  cost INTEGER
-#                  ))))
-
-#      #Add sample Japanese cars
-#     conn.execute("Delete from cars")
-#     sample_cars = [
-#         ('Toyota', 'Camry', 2020, 24000),
-#         ('Honda', 'Civic', 2019, 20000),
-#         ('Nissan', 'Altima', 2021, 25000),
-#         ('Mazda', '3', 2020, 22000),
-#         ('Subaru', 'Impreza', 2018, 21000)
-#     ]
-#     conn.executemany('INSERT INTO cars (maker, model, year, cost) VALUES (?, ?, ?, ?)', sample_cars)
-#     conn.commit()
-#     conn.close()
-                 
-
-#Home page with search
-# @app.route('/')
-# def home():
-#     research = request.args.get('research')
-#     conn = get_db_connection()
-#     if research:
-#         cars = conn.execute('SELECT * FROM cars WHERE maker LIKE ? OR model LIKE ?', ('%' + research + '%', '%' + research + '%')).fetchall()
-#     else:
-#         cars = conn.execute('SELECT * FROM cars').fetchall()
-#     conn.close()
-#     return render_template('home.html', cars=cars)
 
 @app.route('/')
 def home():
