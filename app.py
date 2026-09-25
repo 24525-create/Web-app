@@ -82,6 +82,14 @@ def car(id):
     car = query_db(sql, (id,), True)
     return render_template("car.html", car = car)
 
+@app.route('/manufacturer/<int:id>')
+def manufacturer(id):
+    sql = """SELECT * FROM model
+    JOIN manufacturer ON manufacturer.manufacturer_id=model.manufacturer_id
+    WHERE model.model_id = ?;"""
+    manufacturer = query_db(sql, (id,),True)
+    return render_template ("manufacuturer.html", manufacturer = manufacturer)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
