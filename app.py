@@ -28,6 +28,11 @@ def query_db(query, args=(), one=False):
     rv = cur.fetchall()
     cur.close()
     return (rv[0] if rv else None) if one else rv
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 30d334eed8cef8cd688523c4b751381884684f5d
 @app.route('/')
 def home():
     #home page- just the ID, Maker, Model and Image URL
