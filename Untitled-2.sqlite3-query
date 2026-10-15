@@ -1,6 +1,6 @@
 -- database: ./database.db
 SELECT * FROM model
-    JOIN manufacturer ON model.manufacturer_id
+    JOIN manufacturer ON model.manufacturer_id = manufacturer.manufacturer_id
     WHERE model.manufacturer_id= ?;
 SELECT model.model_id,manufacturer.name,model.name, model.image_url FROM model
 JOIN manufacturer 

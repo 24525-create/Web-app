@@ -17,11 +17,11 @@
      <!-- Shared Navbar -->
       <nav class="w3-bar w3-blue-grey">
            <a href="/" class="w3-bar-item w3-button">Home</a>
-           <a href="/" class="w3-bar-item w3-button">Mazda</a>
-           <a href="/" class="w3-bar-item w3-button">Toyota</a>
-           <a href="/" class="w3-bar-item w3-button">Honda</a>
-           <a href="/" class="w3-bar-item w3-button">Nissan</a>
-           <a href="/" class="w3-bar-item w3-button">Subaru</a>
+           <a href="{{ url_for('manufacturer', id=0)}}" class="w3-bar-item w3-button">Mazda</a>
+           <a href="{{ url_for('manufacturer', id=1)}}" class="w3-bar-item w3-button">Toyota</a>
+           <a href="{{ url_for('manufacturer', id=2)}}" class="w3-bar-item w3-button">Honda</a>
+           <a href="{{url_for('manufacturer', id=3)}}" class="w3-bar-item w3-button">Nissan</a>
+           <a href="{{url_for('manufacturer', id=4)}}" class="w3-bar-item w3-button">Subaru</a>
       </nav>
     {% block body %}
     {% endblock %}

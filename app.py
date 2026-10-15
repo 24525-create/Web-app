@@ -28,11 +28,7 @@ def query_db(query, args=(), one=False):
     rv = cur.fetchall()
     cur.close()
     return (rv[0] if rv else None) if one else rv
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 30d334eed8cef8cd688523c4b751381884684f5d
 @app.route('/')
 def home():
     #home page- just the ID, Maker, Model and Image URL
@@ -56,10 +52,11 @@ def car(id):
 def manufacturer(id):
     #just each car match with each manufacturer
     sql = """SELECT * FROM model
-    JOIN manufacturer ON manufacturer.manufacturer_id=model.manufacturer_id
-    WHERE model.model_id = ?;"""
-    manufacturer = query_db(sql, (id,),True)
-    return render_template ("manufacuturer.html", manufacturer = manufacturer)
+    JOIN manufacturer ON model.manufacturer_id = manufacturer.manufacturer_id
+    WHERE model.manufacturer_id= ?;"""
+    cars = query_db(sql, (id,))
+    print(cars)
+    return render_template ("manufacturer.html", results = cars)
 
 
 if __name__ == '__main__':
